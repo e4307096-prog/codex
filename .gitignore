@@ -1,0 +1,30 @@
+# Unreal Engine
+Binaries/
+Intermediate/
+Saved/
+DerivedDataCache/
+Build/*
+!Build/**/*.png
+!Build/**/*.ico
+.vs/
+.vscode/
+.idea/
+*.sln
+*.suo
+*.opensdf
+*.sdf
+*.VC.db
+*.VC.opendb
+*.xcodeproj
+*.xcworkspace
+*.VC.VC.opendb
+# Python
+__pycache__/
+*.pyc
+.venv/
+# Blender
+*.blend1
+# Claude Code local
+.claude/settings.local.json
+.claude/worktrees/
+worktrees/
