@@ -28,3 +28,6 @@ __pycache__/
 .claude/settings.local.json
 .claude/worktrees/
 worktrees/
+
+# Cephe 1914: ham önizlemeler büyük, Docs/img/cephe1914 kopyaları yeterli
+Content/Map/Raw/preview_*.png

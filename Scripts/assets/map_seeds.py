@@ -42,7 +42,6 @@ Dublin;-6.3;53.35;c=400
 Cork;-8.5;51.9
 Galway;-9.0;53.3
 Belfast;-5.9;54.6;i=7,c=300
-Orta İrlanda;-7.5;53.0
 """.strip()),
 ('GBR', 'GBR_COL', """
 Kıbrıs;33.2;35.1
@@ -101,7 +100,6 @@ Nantes;-1.55;47.2;i=4
 Angers;-0.55;47.47
 Tours;0.7;47.4
 Poitiers;0.35;46.58
-La Rochelle;-1.15;46.15
 Limoges;1.26;45.83
 Bordeaux;-0.58;44.84;c=200
 Bayonne;-1.47;43.5
@@ -133,10 +131,10 @@ Fes;-5.0;34.0;t=H
 """.strip()),
 # ------------------------------------------------------------------ BELÇİKA
 ('BEL', 'BEL', """
-Ypres;2.85;50.95;i=2
+Ypres;3.0;50.9;i=2
 Brugge;3.22;51.2;occ=GER
 Gent;3.72;51.05;occ=GER,i=6
-Kortrijk;3.45;50.85;occ=GER,i=6
+Kortrijk;3.6;50.8;occ=GER,i=6
 Mons;3.95;50.45;occ=GER,i=7
 Charleroi;4.45;50.4;occ=GER,i=9
 Namur;4.87;50.47;occ=GER,fort,i=5
@@ -233,7 +231,6 @@ Kotor;18.7;42.5;t=M
 Prag;14.42;50.08;i=8,c=600
 Pilsen;13.4;49.75;i=9
 Reichenberg;15.0;50.75;i=8
-Hradec Králové;15.8;50.2;i=5
 Budweis;14.5;48.95
 Brünn;16.6;49.2;i=7
 Mährisch-Ostrau;18.3;49.85;i=9
@@ -254,7 +251,6 @@ Brașov;25.6;45.65;t=M
 Maramureș;23.9;47.8;t=M
 Ruthenia;22.7;48.4;t=M
 Krakov;19.94;50.06;fort,i=5,c=150
-Nowy Sącz;20.7;49.62;t=H
 Tarnów;20.98;50.01
 Przemyśl;22.77;49.78;fort
 Karpatlar;22.2;49.3;t=M
@@ -325,7 +321,6 @@ Salamanca;-5.7;41.0
 Extremadura;-6.5;39.0
 Córdoba;-4.8;38.0
 Murcia;-1.1;38.0
-La Mancha;-2.2;39.2
 Pamplona;-1.64;42.8;t=H
 Burgos;-3.7;42.35
 """.strip()),

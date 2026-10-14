@@ -1,0 +1,219 @@
+[
+{
+"name": "Fransız 1. Ordu",
+"nation": "FRA",
+"province": 63,
+"divisions": 5,
+"organization": 0.7
+},
+{
+"name": "Fransız 2. Ordu",
+"nation": "FRA",
+"province": 61,
+"divisions": 6,
+"organization": 0.66
+},
+{
+"name": "Fransız 3. Ordu",
+"nation": "FRA",
+"province": 55,
+"divisions": 5,
+"organization": 0.68
+},
+{
+"name": "Fransız 4. Ordu",
+"nation": "FRA",
+"province": 57,
+"divisions": 5,
+"organization": 0.64
+},
+{
+"name": "Fransız 5. Ordu",
+"nation": "FRA",
+"province": 49,
+"divisions": 6,
+"organization": 0.62
+},
+{
+"name": "Fransız 6. Ordu",
+"nation": "FRA",
+"province": 47,
+"divisions": 5,
+"organization": 0.6
+},
+{
+"name": "Fransız 10. Ordu",
+"nation": "FRA",
+"province": 37,
+"divisions": 7,
+"organization": 0.58
+},
+{
+"name": "Britanya Seferi Kuvvetleri",
+"nation": "GBR",
+"province": 110,
+"divisions": 6,
+"organization": 0.55
+},
+{
+"name": "Hint Kolordusu",
+"nation": "GBR",
+"province": 36,
+"divisions": 2,
+"organization": 0.52
+},
+{
+"name": "Belçika Ordusu",
+"nation": "BEL",
+"province": 110,
+"divisions": 6,
+"organization": 0.42
+},
+{
+"name": "Alman 6. Ordu",
+"nation": "GER",
+"province": 38,
+"divisions": 7,
+"organization": 0.66
+},
+{
+"name": "Alman 4. Ordu",
+"nation": "GER",
+"province": 113,
+"divisions": 8,
+"organization": 0.62
+},
+{
+"name": "Alman 1. Ordu",
+"nation": "GER",
+"province": 43,
+"divisions": 6,
+"organization": 0.6
+},
+{
+"name": "Alman 3. Ordu",
+"nation": "GER",
+"province": 50,
+"divisions": 5,
+"organization": 0.64
+},
+{
+"name": "Alman 5. Ordu",
+"nation": "GER",
+"province": 53,
+"divisions": 6,
+"organization": 0.68
+},
+{
+"name": "Alman 7. Ordu",
+"nation": "GER",
+"province": 176,
+"divisions": 4,
+"organization": 0.6
+},
+{
+"name": "Alman 8. Ordu",
+"nation": "GER",
+"province": 147,
+"divisions": 5,
+"organization": 0.7
+},
+{
+"name": "Alman 9. Ordu",
+"nation": "GER",
+"province": 144,
+"divisions": 7,
+"organization": 0.66
+},
+{
+"name": "Avusturya 1. Ordu",
+"nation": "AUH",
+"province": 219,
+"divisions": 6,
+"organization": 0.55
+},
+{
+"name": "Avusturya 3. Ordu",
+"nation": "AUH",
+"province": 221,
+"divisions": 5,
+"organization": 0.4
+},
+{
+"name": "Avusturya 4. Ordu",
+"nation": "AUH",
+"province": 220,
+"divisions": 5,
+"organization": 0.5
+},
+{
+"name": "Avusturya Balkan Ordusu",
+"nation": "AUH",
+"province": 213,
+"divisions": 7,
+"organization": 0.58
+},
+{
+"name": "Rus 2. Ordu",
+"nation": "RUS",
+"province": 302,
+"divisions": 8,
+"organization": 0.6
+},
+{
+"name": "Rus 4. Ordu",
+"nation": "RUS",
+"province": 309,
+"divisions": 6,
+"organization": 0.55
+},
+{
+"name": "Rus 9. Ordu",
+"nation": "RUS",
+"province": 301,
+"divisions": 7,
+"organization": 0.62
+},
+{
+"name": "Rus 3. Ordu",
+"nation": "RUS",
+"province": 224,
+"divisions": 7,
+"organization": 0.58
+},
+{
+"name": "Rus 8. Ordu",
+"nation": "RUS",
+"province": 227,
+"divisions": 6,
+"organization": 0.5
+},
+{
+"name": "Rus Kafkas Ordusu",
+"nation": "RUS",
+"province": 371,
+"divisions": 5,
+"organization": 0.55
+},
+{
+"name": "Sırp 1. Ordu",
+"nation": "SER",
+"province": 231,
+"divisions": 5,
+"organization": 0.48
+},
+{
+"name": "Osmanlı 3. Ordu",
+"nation": "OTT",
+"province": 422,
+"divisions": 6,
+"organization": 0.5
+},
+{
+"name": "Osmanlı 4. Ordu",
+"nation": "OTT",
+"province": 429,
+"divisions": 4,
+"organization": 0.45
+}
+]

@@ -168,6 +168,13 @@ def rasterize_countries():
 def build_provinces():
     T('ülkeler rasterize ediliyor')
     cidx, cnames = rasterize_countries()
+    # 110m kıyı çizgisi köşeli: yumuşat + ince fraktal bozulma; yeni kara pikselleri en yakın ülkeyi alır
+    land0 = cidx > 0
+    f = ndi.gaussian_filter(land0.astype(np.float32), 4.0) + 0.09 * noise((H, W), 1.8, 41)
+    land1 = f > 0.5
+    ii = ndi.distance_transform_edt(~land0, return_distances=False, return_indices=True)
+    cidx = np.where(land1, cidx[ii[0], ii[1]], 0).astype(np.uint8)
+    del ii, f, land0
     land = cidx > 0
     seeds = parse_seeds()
     groups = []
@@ -221,15 +228,18 @@ def build_provinces():
 
     T('domain-warp gürültüsü')
     lw, lh = W // 4, H // 4
-    wx = ndi.zoom(noise((lh, lw), 2.8, 11), 4, order=1)
-    wy = ndi.zoom(noise((lh, lw), 2.8, 12), 4, order=1)
-    wx2 = noise((H // 2, W // 2), 2.2, 13)
-    wy2 = noise((H // 2, W // 2), 2.2, 14)
-    wx2 = np.kron(wx2, np.ones((2, 2), np.float32))
-    wy2 = np.kron(wy2, np.ones((2, 2), np.float32))
-    DX = (wx * 22 + wx2 * 7).astype(np.float32)
-    DY = (wy * 22 + wy2 * 7).astype(np.float32)
-    del wx, wy, wx2, wy2
+    wx = ndi.zoom(noise((lh, lw), 3.2, 11), 4, order=1)
+    wy = ndi.zoom(noise((lh, lw), 3.2, 12), 4, order=1)
+    DX = (wx * 26).astype(np.float32)
+    DY = (wy * 26).astype(np.float32)
+    wx3 = ndi.zoom(noise((lh, lw), 2.2, 13), 4, order=1)
+    wy3 = ndi.zoom(noise((lh, lw), 2.2, 14), 4, order=1)
+    DX = DX + (wx3 * 7).astype(np.float32)
+    DY = DY + (wy3 * 7).astype(np.float32)
+    del wx, wy, wx3, wy3
+    for s in seeds:  # tohumlar da aynı alanla bükülür; böylece her tohum kendi pikselini alır
+        s['wx'] = s['x'] + float(DX[int(s['y']), int(s['x'])])
+        s['wy'] = s['y'] + float(DY[int(s['y']), int(s['x'])])
 
     A = np.zeros((H, W), np.uint16)
     for g in groups:
@@ -247,7 +257,7 @@ def build_provinces():
         bounds = np.flatnonzero(np.diff(cls)) + 1
         starts = np.concatenate([[0], bounds])
         ends = np.concatenate([bounds, [len(cls)]])
-        allpts = np.array([[seeds[i]['x'], seeds[i]['y']] for i in sl])
+        allpts = np.array([[seeds[i]['wx'], seeds[i]['wy']] for i in sl])
         alltree = cKDTree(allpts)
         for st, en in zip(starts, ends):
             sel = order[st:en]
@@ -413,7 +423,7 @@ def smooth_chain(path):
         a, b = max(0, i - k), min(n, i + k + 1)
         sm[i] = res[a:b].mean(0)
     from shapely.geometry import LineString as LS
-    sm = np.array(LS(sm).simplify(0.7).coords)
+    sm = np.array(LS(sm).simplify(0.4).coords)
     return sm
 
 
@@ -537,7 +547,7 @@ def write_tables(A, provs, hf, land):
             elif 24 < lon0 < 40 and 46 < lat0 < 52:
                 dens *= 1.5
             elif lon0 > 36 and 53 < lat0 < 58:
-                dens *= 1.4
+                dens *= 1.0
             elif lon0 > 41 and lat0 < 44:
                 dens *= 0.7
             elif lon0 < 31 and lat0 > 55:
@@ -654,7 +664,7 @@ LABELS = {  # kod: (metin, lon, lat, boy px, harf aralığı)
     'SWI': ('İSVİÇRE', 8.2, 46.85, 17, 3), 'NED': ('HOLLANDA', 5.4, 52.3, 17, 3), 'BEL': ('BELÇİKA', 4.5, 50.6, 15, 2),
     'DEN': ('DANİMARKA', 9.5, 56.1, 17, 3), 'NOR': ('NORVEÇ', 8.6, 60.9, 40, 9), 'SWE': ('İSVEÇ', 15.0, 59.6, 42, 12),
     'ROM': ('ROMANYA', 25.3, 45.7, 38, 8), 'BUL': ('BULGARİSTAN', 25.6, 42.9, 24, 4), 'GRE': ('YUNANİSTAN', 22.3, 39.2, 22, 3),
-    'SER': ('SIRBİSTAN', 20.7, 43.9, 19, 3), 'ALB': ('ARN.', 19.9, 41.3, 14, 1), 'MNT': ('', 19, 42.7, 10, 1),
+    'SER': ('SIRBİSTAN', 20.7, 43.9, 19, 3), 'MNT': ('', 19, 42.7, 10, 1),
 }
 
 
@@ -700,6 +710,8 @@ def render_preview(mode, A, provs, hm, fronts, paper, dland, dsea):
             hc = c
         if mode == 'front':
             c = c * 0.62 + np.array([214, 210, 190], np.float32) * 0.38
+        g = c.mean()
+        c = c * 0.88 + g * 0.12
         LUT[i] = c * jit[i]
         HAT[i] = hc * 0.72
         OCC[i] = p['owner'] != p['ctrl'] and mode != 'terrain'
@@ -787,8 +799,8 @@ def render_preview(mode, A, provs, hm, fronts, paper, dland, dsea):
             continue
         dr.line(pts, fill=(176, 28, 28, 235), width=wd, joint='curve')
         # dişler: Merkez kontrolündeki tarafa bakar
-        tooth = 5 + lvl * 2
-        step = 3.0 * tooth if lvl > 0 else 999
+        tooth = 8 + lvl * 2
+        step = 2.6 * tooth
         acc = 0.0
         for (x0, y0), (x1, y1) in zip(pts[:-1], pts[1:]):
             seg = math.hypot(x1 - x0, y1 - y0)
@@ -800,7 +812,7 @@ def render_preview(mode, A, provs, hm, fronts, paper, dland, dsea):
             while t < seg:
                 px, py = x0 + ux * t, y0 + uy * t
                 for sgn in (1, -1):
-                    sx, sy = px + nx * sgn * 6, py + ny * sgn * 6
+                    sx, sy = px + nx * sgn * (wd / 2 + 9), py + ny * sgn * (wd / 2 + 9)
                     ix, iy = int(min(max(sx, 0), W - 1)), int(min(max(sy, 0), H - 1))
                     pid = int(A[iy, ix])
                     if pid and ctrlside.get(pid) == 'Central':

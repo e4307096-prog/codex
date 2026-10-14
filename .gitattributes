@@ -16,3 +16,7 @@
 *.h text eol=lf
 *.py text eol=lf
 *.md text eol=lf
+
+# Proxy LFS yüklemesini engelliyor: bu klasörler normal git dosyası (her biri < 100 MB)
+Content/Map/Raw/** !filter !diff !merge binary
+Docs/img/** !filter !diff !merge binary
