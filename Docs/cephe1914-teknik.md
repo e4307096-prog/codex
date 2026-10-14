@@ -63,6 +63,13 @@ Malzeme parametreleri (`M_ProvinceMap`): `IdTex`, `LookupTex`, `HeightTex`, `Pap
 
 `build_map_level.py` (UE editör Python): ham dosyaları içe alır (ID dokusu: `TC_VectorDisplacementmap`/sıkıştırmasız, sRGB kapalı, `TF_Nearest`, mip yok; heightmap: `TC_Grayscale` 16-bit), FBX'leri alır, `M_ProvinceMap` malzemesini MaterialEditingLibrary + Custom HLSL düğümüyle kurar, CSV'lerden DataTable'ları oluşturur (`DT_Provinces` → `FProvinceRow`, `DT_Nations` → `FNationRow`), `Map_Europe1914` haritasını kurar ve aktörleri yerleştirir. Proje ayarı: `Map/Raw` "Additional Non-Asset Directories to Package"e eklenir.
 
+## Varlık yolları ve parametre adları (tek kaynak)
+
+- Dokular `/Game/Map/Textures/`: `T_ProvinceId`, `T_Height`, `T_Paper`. Mesh'ler `/Game/Map/Meshes/`: `SM_MapBoard`, `SM_WarTable`, `SM_ArmyCounter`, `SM_TrenchStrip`, `SM_RailStrip` vb. DataTable'lar `/Game/Map/`: `DT_Provinces` (`/Script/Cephe1914.ProvinceRow`), `DT_Nations` (`/Script/Cephe1914.NationRow`). Harita `/Game/Maps/Map_Europe1914` (`Config/DefaultEngine.ini` ile aynı).
+- Malzemeler `/Game/Map/Materials/`: `M_ProvinceMap` (yukarıdaki parametreler), `M_TrenchStrip` (`Color`, `Intensity`; `AFrontLineActor`), `M_Rail` (`Color`; `ARailNetworkActor`), `M_ArmyCounter` (`NationColor`; `AArmyCounterActor`, organizasyon çubuğu da bunu kullanır).
+- `AProvinceMapActor` özellikleri: `MapMaterialAsset`, `IdTextureAsset`, `HeightTextureAsset`, `PaperTextureAsset`, `BoardMeshAsset` (varsayılanlar yukarıdaki yollardır; betik ayrıca `map_material_asset` atar).
+- HLSL Custom düğüm giriş adı `TexelSize`, bağlandığı parametre `MapTexelSize`; diğer girişler parametrelerle aynı adlı. Arama dokusu `Texture2D.Load(int3(id, satır, 0))` ile okunur (örnekleyici yok, `y = satır`).
+
 ## Doğrulama
 
 Bu konteynerde Unreal yok: C++ derlenmez, editör betikleri çalışmaz; yalnızca sözdizimi ve statik inceleme. Veri hattı ve Blender burada çalıştırılır ve önizlemeleri üretilir.

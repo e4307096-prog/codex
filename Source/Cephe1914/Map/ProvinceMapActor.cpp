@@ -20,10 +20,10 @@ AProvinceMapActor::AProvinceMapActor()
 	BoardMesh->SetCollisionEnabled(ECollisionEnabled::NoCollision);
 
 	BoardMeshAsset = TSoftObjectPtr<UStaticMesh>(FSoftObjectPath(TEXT("/Game/Map/Meshes/SM_MapBoard.SM_MapBoard")));
-	MapMaterialAsset = TSoftObjectPtr<UMaterialInterface>(FSoftObjectPath(TEXT("/Game/Map/M_ProvinceMap.M_ProvinceMap")));
-	IdTextureAsset = TSoftObjectPtr<UTexture>(FSoftObjectPath(TEXT("/Game/Map/T_ProvinceId.T_ProvinceId")));
-	HeightTextureAsset = TSoftObjectPtr<UTexture>(FSoftObjectPath(TEXT("/Game/Map/T_Heightmap.T_Heightmap")));
-	PaperTextureAsset = TSoftObjectPtr<UTexture>(FSoftObjectPath(TEXT("/Game/Map/T_Paper.T_Paper")));
+	MapMaterialAsset = TSoftObjectPtr<UMaterialInterface>(FSoftObjectPath(TEXT("/Game/Map/Materials/M_ProvinceMap.M_ProvinceMap")));
+	IdTextureAsset = TSoftObjectPtr<UTexture>(FSoftObjectPath(TEXT("/Game/Map/Textures/T_ProvinceId.T_ProvinceId")));
+	HeightTextureAsset = TSoftObjectPtr<UTexture>(FSoftObjectPath(TEXT("/Game/Map/Textures/T_Height.T_Height")));
+	PaperTextureAsset = TSoftObjectPtr<UTexture>(FSoftObjectPath(TEXT("/Game/Map/Textures/T_Paper.T_Paper")));
 }
 
 void AProvinceMapActor::BeginPlay()

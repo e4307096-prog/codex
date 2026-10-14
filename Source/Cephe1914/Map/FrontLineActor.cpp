@@ -13,7 +13,7 @@ AFrontLineActor::AFrontLineActor()
 	PrimaryActorTick.bCanEverTick = false;
 	SetRootComponent(CreateDefaultSubobject<USceneComponent>(TEXT("Root")));
 	StripMeshAsset = TSoftObjectPtr<UStaticMesh>(FSoftObjectPath(TEXT("/Game/Map/Meshes/SM_TrenchStrip.SM_TrenchStrip")));
-	StripMaterialAsset = TSoftObjectPtr<UMaterialInterface>(FSoftObjectPath(TEXT("/Game/Map/M_Strip.M_Strip")));
+	StripMaterialAsset = TSoftObjectPtr<UMaterialInterface>(FSoftObjectPath(TEXT("/Game/Map/Materials/M_TrenchStrip.M_TrenchStrip")));
 }
 
 void AFrontLineActor::BeginPlay()

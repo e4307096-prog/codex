@@ -24,7 +24,7 @@ public:
 
 	UPROPERTY(EditAnywhere, Category = "Cephe") TSoftObjectPtr<UStaticMesh> CounterMeshAsset;
 	UPROPERTY(EditAnywhere, Category = "Cephe") TSoftObjectPtr<UMaterialInterface> ColorMaterialAsset;
-	UPROPERTY(EditAnywhere, Category = "Cephe") FName ColorParam = TEXT("Color");
+	UPROPERTY(EditAnywhere, Category = "Cephe") FName ColorParam = TEXT("NationColor");
 	/** SM_ArmyCounter'da bayrak/sembol ust yuz malzeme slotu. */
 	UPROPERTY(EditAnywhere, Category = "Cephe") int32 TintSlot = 1;
 	/** Blok mesh'i varsayilan kup ise boyutlari (cm); gercek SM_ArmyCounter icin bu degerler yalnizca cubuk konumunu belirler. */

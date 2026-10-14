@@ -95,7 +95,7 @@ if (!sea)
     float3 n = normalize(float3(-(hx1 - hx0) * 90.0, -(hy1 - hy0) * 90.0, 1.0));   // UV y asagi
     float3 L = normalize(float3(-0.6, -0.6, 0.55));                                // kuzeybati isik
     float shade = dot(n, L) - L.z / length(L);
-    float strength = HillshadeStrength * (MapMode > 1.5 && MapMode < 2.5 ? 1.6 : 1.0); // arazi modunda guclu
+    float strength = HillshadeStrength * (MapMode > 2.5 ? 1.6 : 1.0); // arazi modunda guclu
     col *= saturate(1.0 + shade * strength);
 }
 

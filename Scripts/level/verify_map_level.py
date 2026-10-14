@@ -58,7 +58,7 @@ def main():
             for n in ("MapTexelSize", "BorderColor", "NationBorderColor", "SeaColor"):
                 check("param_vector_" + n, n in vec)
         for mname, params in (("M_TrenchStrip", ("Color", "Intensity")), ("M_ArmyCounter", ("NationColor",)),
-                              ("M_Rail", ())):
+                              ("M_Rail", ("Color",))):
             m = eal.load_asset("/Game/Map/Materials/" + mname)
             check("mat_" + mname, m is not None)
             if m and params:

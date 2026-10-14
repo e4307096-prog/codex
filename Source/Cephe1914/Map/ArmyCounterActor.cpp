@@ -21,7 +21,7 @@ AArmyCounterActor::AArmyCounterActor()
 	Bar->SetCollisionEnabled(ECollisionEnabled::NoCollision);
 
 	CounterMeshAsset = TSoftObjectPtr<UStaticMesh>(FSoftObjectPath(TEXT("/Game/Map/Meshes/SM_ArmyCounter.SM_ArmyCounter")));
-	ColorMaterialAsset = TSoftObjectPtr<UMaterialInterface>(FSoftObjectPath(TEXT("/Game/Map/M_CounterColor.M_CounterColor")));
+	ColorMaterialAsset = TSoftObjectPtr<UMaterialInterface>(FSoftObjectPath(TEXT("/Game/Map/Materials/M_ArmyCounter.M_ArmyCounter")));
 }
 
 void AArmyCounterActor::Init(int32 InArmyIndex, const FLinearColor& NationColor, float Organization)
@@ -62,7 +62,7 @@ void AArmyCounterActor::SetOrganization(float Organization)
 	const FLinearColor C = FMath::Lerp(FLinearColor(0.70f, 0.12f, 0.08f), FLinearColor(0.20f, 0.55f, 0.20f), Organization);
 	if (!BarMID)
 	{
-		BarMID = CepheUtil::TintSlot(Bar, 0, nullptr, ColorParam, C);
+		BarMID = CepheUtil::TintSlot(Bar, 0, ColorMaterialAsset.LoadSynchronous(), ColorParam, C);
 	}
 	else
 	{

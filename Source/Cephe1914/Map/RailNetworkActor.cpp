@@ -13,7 +13,7 @@ ARailNetworkActor::ARailNetworkActor()
 	PrimaryActorTick.bCanEverTick = false;
 	SetRootComponent(CreateDefaultSubobject<USceneComponent>(TEXT("Root")));
 	StripMeshAsset = TSoftObjectPtr<UStaticMesh>(FSoftObjectPath(TEXT("/Game/Map/Meshes/SM_RailStrip.SM_RailStrip")));
-	StripMaterialAsset = TSoftObjectPtr<UMaterialInterface>(FSoftObjectPath(TEXT("/Game/Map/M_Strip.M_Strip")));
+	StripMaterialAsset = TSoftObjectPtr<UMaterialInterface>(FSoftObjectPath(TEXT("/Game/Map/Materials/M_Rail.M_Rail")));
 }
 
 void ARailNetworkActor::BeginPlay()

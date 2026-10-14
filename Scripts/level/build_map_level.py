@@ -290,8 +290,7 @@ def build_counter_material():
 
 def build_rail_material():
     mat = get_or_create_material("M_Rail")
-    c = node(mat, unreal.MaterialExpressionConstant3Vector, -400, 0)
-    c.set_editor_property("constant", unreal.LinearColor(0.05, 0.045, 0.04, 1.0))
+    c = vec_param(mat, "Color", (0.05, 0.045, 0.04, 1.0), -400, 0)   # C++ RailColor ile boyanir
     mel.connect_material_property(c, "", unreal.MaterialProperty.MP_BASE_COLOR)
     rough = node(mat, unreal.MaterialExpressionConstant, -400, 200)
     rough.set_editor_property("r", 0.7)
@@ -384,13 +383,9 @@ def build_level(board_mat):
     if pm_cls:
         pm = spawn(pm_cls, label="ProvinceMap")
         if pm and board_mat:
-            # Aktorun malzeme/mesh ozellikleri C++'a bagli; varsa doldur (yoksa aktor kendi yukler)
-            for prop in ("map_material", "base_material", "province_material"):
-                try:
-                    pm.set_editor_property(prop, board_mat)
-                    break
-                except Exception:  # noqa: BLE001
-                    continue
+            # C++ varsayilanlari (MapMaterialAsset, IdTextureAsset, HeightTextureAsset, PaperTextureAsset,
+            # BoardMeshAsset) bu betigin yollariyla ayni; TSoftObjectPtr ozelligi acikca da atanir.
+            try_set(pm, "map_material_asset", unreal.SoftObjectPath(MAT_PATH + "/M_ProvinceMap.M_ProvinceMap"))
     if fl_cls:
         spawn(fl_cls, label="FrontLines")
     if rn_cls:

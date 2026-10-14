@@ -26,8 +26,8 @@ Arama dokusu: sütun = bölge kimliği (< 1024). Ülke indeksi = `DT_Nations` sa
 
 - `/Game/Map/DT_Provinces`, `/Game/Map/DT_Nations` (sözleşme)
 - `/Game/Map/Meshes/SM_MapBoard`, `SM_TrenchStrip`, `SM_RailStrip`, `SM_ArmyCounter` (sözleşme; yoksa levha düzleme, ordu bloğu küpe düşer, şeritler çizilmez)
-- Sözleşmede olmayan, varsayım: `/Game/Map/M_ProvinceMap` (malzeme), `/Game/Map/T_ProvinceId`, `T_Heightmap`, `T_Paper` (dokular), isteğe bağlı `/Game/Map/M_Strip` ve `/Game/Map/M_CounterColor` ("Color" vektör parametreli, şeritler için "Used with Spline Meshes" açık)
-- Harita: `/Game/Map/Map_Europe1914` (`Config/DefaultEngine.ini` varsayılan harita)
+- Malzemeler `/Game/Map/Materials/`: `M_ProvinceMap`, `M_TrenchStrip` (`Color`), `M_Rail` (`Color`), `M_ArmyCounter` (`NationColor`); dokular `/Game/Map/Textures/T_ProvinceId`, `T_Height`, `T_Paper` (sözleşmeyle aynı; şerit malzemelerinde "Used with Spline Meshes" açık olmalı)
+- Harita: `/Game/Maps/Map_Europe1914` (`Config/DefaultEngine.ini` varsayılan harita)
 
 ## Derleme (Windows, VS 2022)
 
@@ -40,7 +40,7 @@ Arama dokusu: sütun = bölge kimliği (< 1024). Ülke indeksi = `DT_Nations` sa
 
 1. Editör açılınca Output Log'da `LogCephe` hatalarına bak (yüklenemeyen asset/JSON uyarıları orada).
 2. Level ajanının betiği `Scripts/level/build_map_level.py`'yi editörde çalıştır (ham dosyaları içe aktarır, `M_ProvinceMap`, DataTable'lar ve `Map_Europe1914` kurulur).
-3. Betik `M_ProvinceMap` içinde `IdTex, LookupTex, HeightTex, PaperTex, MapTexelSize, BorderColor, NationBorderColor, SeaColor, HillshadeStrength, MapMode` parametrelerini üretmeli; doku yolları yukarıdaki varsayımla uyuşmuyorsa `AProvinceMapActor` özelliklerinden düzelt.
+3. Betik `M_ProvinceMap` içinde `IdTex, LookupTex, HeightTex, PaperTex, MapTexelSize, BorderColor, NationBorderColor, SeaColor, HillshadeStrength, MapMode` parametrelerini üretmeli; doku yolları yukarıdaki yollarla uyuşmuyorsa `AProvinceMapActor` özelliklerinden düzelt.
 4. Oynat (PIE): GameMode `/Script/Cephe1914.CepheGameMode` olarak ayarlı; haritada aktör yoksa GameMode kendisi üretir.
 
 Kontroller: WASD/ok = kaydır, tekerlek = zoom (3 seviye), Q/E = döndür, sol tık = seç, 1-4 = katman, Boşluk = duraklat, +/- = hız, F1-F6 = menü.
@@ -50,7 +50,7 @@ Kontroller: WASD/ok = kaydır, tekerlek = zoom (3 seviye), Q/E = döndür, sol t
 - Hiç derlenmedi: ilk derlemede küçük hatalar beklenir (aşağıdaki liste en olasılar).
 - `FProvinceRow.Population/Industry` `float` (CSV'de tam sayı da kayan da gelse okunur); sözleşme türü belirtmiyor.
 - Hover/seçim, harita yüksekliğini hesaba katmadan `HoverPlaneZ` düzlemine ışın atar; yüksek rölyefte kamera eğikken birkaç piksel sapma olabilir. Cephe/demiryolu Z'si sabit ofsettir (rölyefi izlemez), `SM_MapBoard` yüksekliği/merkezi sözleşmedeki gibi (dünya orijini, ≤ 600 cm) varsayıldı.
-- Ordu bloğu boyutu `SM_ArmyCounter` ölçüsüne göre `BlockSize/BarMaxLength` ile elle ayarlanır; ülke rengi malzeme slotu 1'e ("Color" parametresi) uygulanır.
+- Ordu bloğu boyutu `SM_ArmyCounter` ölçüsüne göre `BlockSize/BarMaxLength` ile elle ayarlanır; ülke rengi malzeme slotu 1'e (`NationColor` parametresi) uygulanır.
 - Üst şeritteki kaynak değerleri (insan gücü, sanayi...) yer tutucudur; ekonomi sistemi yok.
 - Mono yazı tipi `Engine/Content/Slate/Fonts/DroidSansMono.ttf` dosyasından yüklenir, yoksa varsayılan yazıya düşer.
 - Fare tekerleği `EKeys::MouseWheelAxis` + `Triggered` ile bir adım sayılır; bazı aygıtlarda kare başına birden fazla tetiklenebilir.
