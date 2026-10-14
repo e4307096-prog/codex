@@ -22,12 +22,9 @@ Bristol;-2.6;51.45;i=6,c=500
 Güney Galler;-3.2;51.6;i=7
 Orta Galler;-3.7;52.4;t=H
 Kuzey Galler;-3.9;53.0;t=H
-Oxford;-1.25;51.8
 Doğu Anglia;1.0;52.7
-Cambridge;0.1;52.2
 Birmingham;-1.9;52.5;i=9,c=1500
 Nottingham;-1.15;52.95;i=7
-Lincolnshire;-0.3;53.2
 Liverpool;-2.99;53.4;i=8,c=1000
 Manchester;-2.25;53.55;i=9,c=2000
 Sheffield;-1.47;53.38;i=9,c=500
@@ -44,8 +41,6 @@ Inverness;-4.2;57.5;t=M
 Dublin;-6.3;53.35;c=400
 Cork;-8.5;51.9
 Galway;-9.0;53.3
-Limerick;-8.6;52.7
-Donegal;-7.9;54.8;t=H
 Belfast;-5.9;54.6;i=7,c=300
 Orta İrlanda;-7.5;53.0
 """.strip()),
@@ -55,9 +50,6 @@ Kıbrıs;33.2;35.1
 # ------------------------------------------------------------------ FRANSA
 ('FRA', 'FRA', """
 Paris;2.35;48.85;i=8,c=3500
-Meaux;2.95;48.95
-Melun;3.0;48.5
-Chartres;1.5;48.45
 Orléans;1.9;47.9;i=3
 Dunkerque;2.3;50.95;i=3
 Boulogne;1.65;50.6
@@ -97,30 +89,24 @@ Jura;5.9;46.55;t=M
 Chaumont;5.14;48.11
 Troyes;4.08;48.3;i=3
 Dijon;5.04;47.32
-Auxerre;3.57;47.8
-Nevers;3.16;47.0
 Bourges;2.4;47.08
 Rouen;1.1;49.44;i=5,c=120
 Le Havre;0.1;49.5;i=4
 Caen;-0.37;49.18
 Cherbourg;-1.6;49.63
-Alençon;0.1;48.43
 Le Mans;0.2;47.98
 Rennes;-1.68;48.11
 Brest;-4.5;48.4
-Vannes;-2.8;47.65
 Nantes;-1.55;47.2;i=4
 Angers;-0.55;47.47
 Tours;0.7;47.4
 Poitiers;0.35;46.58
 La Rochelle;-1.15;46.15
 Limoges;1.26;45.83
-Périgueux;0.72;45.18
 Bordeaux;-0.58;44.84;c=200
 Bayonne;-1.47;43.5
 Pau;-0.1;43.2;t=M
 Toulouse;1.44;43.6;i=4
-Cahors;1.44;44.45
 Foix;1.6;42.95;t=M
 Perpignan;2.9;42.7
 Montpellier;3.88;43.6
@@ -131,7 +117,6 @@ Grenoble;5.72;45.19;t=M,i=4
 Savoie;6.4;45.4;t=M
 Lyon;4.83;45.76;i=7,c=400
 Saint-Étienne;4.39;45.43;i=8
-Mâcon;4.8;46.3
 Clermont-Ferrand;3.08;45.78;t=H
 Masif Santral;2.9;44.7;t=M
 Korsika;9.1;42.1;t=M
@@ -148,11 +133,10 @@ Fes;-5.0;34.0;t=H
 """.strip()),
 # ------------------------------------------------------------------ BELÇİKA
 ('BEL', 'BEL', """
-Yser;2.85;51.05;i=2
-Ypres;2.95;50.8;i=2
+Ypres;2.85;50.95;i=2
 Brugge;3.22;51.2;occ=GER
 Gent;3.72;51.05;occ=GER,i=6
-Kortrijk;3.4;50.8;occ=GER,i=6
+Kortrijk;3.45;50.85;occ=GER,i=6
 Mons;3.95;50.45;occ=GER,i=7
 Charleroi;4.45;50.4;occ=GER,i=9
 Namur;4.87;50.47;occ=GER,fort,i=5
@@ -183,11 +167,9 @@ Aachen;6.08;50.77;i=6
 Köln;6.96;50.94;i=8,c=600
 Ruhr;7.4;51.5;i=10,c=3000
 Münster;7.63;51.96
-Ostfriesland;7.6;53.2
 Bremen;8.8;53.1;i=4,c=250
 Hamburg;10.0;53.55;i=8,c=1000
 Kiel;9.7;54.5;i=4
-Lübeck;10.8;53.85
 Rostock;12.1;54.1
 Stettin;14.55;53.43;i=5
 Stolp;17.0;54.45
@@ -203,24 +185,20 @@ Frankfurt (Oder);14.5;52.3
 Magdeburg;11.6;52.1;i=5
 Hannover;9.73;52.37;i=6
 Kassel;9.5;51.3;t=H,i=5
-Harz;10.6;51.75;t=H
 Leipzig;12.37;51.34;i=8,c=300
 Dresden;13.74;51.05;i=8,c=300
 Chemnitz;12.9;50.8;t=H,i=9
 Erfurt;11.03;50.98;i=4
 Frankfurt;8.68;50.11;i=7,c=200
 Saar;7.0;49.3;i=9
-Pfalz;7.9;49.4;i=5
 Karlsruhe;8.4;49.0;i=5
 Stuttgart;9.18;48.78;i=6
 Kara Orman;8.2;48.0;t=F
 Ulm;10.0;48.4;t=H
-Augsburg;10.7;48.3
 Münih;11.58;48.14;i=6,c=500
 Nürnberg;11.08;49.45;i=7
 Würzburg;9.93;49.8
 Regensburg;12.1;49.0;t=F
-Görlitz;14.95;51.2;i=5
 Glogau;16.1;51.7
 Breslau;17.04;51.11;i=6,c=400
 Oppeln;17.9;50.7;i=5
@@ -251,7 +229,6 @@ Sarajevo;18.4;43.85;t=M
 Hersek;17.8;43.3;t=M
 Banja Luka;17.2;44.75;t=H
 Zara;15.3;44.1;t=M
-Spalato;16.5;43.5;t=M
 Kotor;18.7;42.5;t=M
 Prag;14.42;50.08;i=8,c=600
 Pilsen;13.4;49.75;i=9
@@ -259,20 +236,16 @@ Reichenberg;15.0;50.75;i=8
 Hradec Králové;15.8;50.2;i=5
 Budweis;14.5;48.95
 Brünn;16.6;49.2;i=7
-Olmütz;17.25;49.6;i=4
 Mährisch-Ostrau;18.3;49.85;i=9
 Pressburg;17.1;48.15;i=4
 Zvolen;19.15;48.58;t=H
 Kaschau;21.25;48.72
 Budapeşte;19.04;47.5;i=6,c=1000
 Győr;17.65;47.7
-Szombathely;16.6;47.2
 Pécs;18.23;46.07
 Szeged;20.15;46.25
-Kecskemét;19.7;46.9
 Miskolc;20.78;48.1;i=6
 Debrecen;21.63;47.53
-Nagyvárad;21.92;47.05
 Temeşvar;21.23;45.75;i=3
 Voyvodina;19.85;45.25
 Klausenburg;23.6;46.77;t=H
@@ -283,7 +256,6 @@ Ruthenia;22.7;48.4;t=M
 Krakov;19.94;50.06;fort,i=5,c=150
 Nowy Sącz;20.7;49.62;t=H
 Tarnów;20.98;50.01
-Rzeszów;21.9;50.04
 Przemyśl;22.77;49.78;fort
 Karpatlar;22.2;49.3;t=M
 Sambor;23.5;49.4;occ=RUS,t=H
@@ -319,12 +291,9 @@ Udine;13.23;46.07;t=H
 Genova;8.93;44.41;i=6,c=200
 Bologna;11.34;44.49;i=3
 Floransa;11.25;43.77;t=H
-Perugia;12.4;43.1;t=H
-Ancona;13.5;43.6
 Roma;12.5;41.9;c=600
 Abruzzo;13.9;42.2;t=M
 Napoli;14.27;40.85;i=5,c=700
-Foggia;15.5;41.45
 Bari;16.87;41.12
 Potenza;15.8;40.6;t=H
 Kalabriya;16.2;39.0;t=M
@@ -332,9 +301,7 @@ Palermo;13.35;38.1;t=H
 Sicilya;14.4;37.4;t=H
 Sardinya;9.0;40.0;t=H
 """.strip()),
-('ITA', 'ITA_COL', """
-Trablus;13.2;32.9
-""".strip()),
+
 # ------------------------------------------------------------------ İSVİÇRE
 ('SWI', 'SWI', """
 Bern;7.45;46.9;t=H
@@ -360,7 +327,6 @@ Córdoba;-4.8;38.0
 Murcia;-1.1;38.0
 La Mancha;-2.2;39.2
 Pamplona;-1.64;42.8;t=H
-Lleida;0.6;41.7
 Burgos;-3.7;42.35
 """.strip()),
 ('POR', 'POR', """
@@ -373,7 +339,6 @@ Trás-os-Montes;-7.4;41.6;t=H
 # ------------------------------------------------------------------ İSKANDİNAVYA
 ('DEN', 'DEN', """
 Kopenhag;12.57;55.68;i=5,c=450
-Odense;10.4;55.4
 Güney Jutland;9.3;55.5
 Aarhus;10.2;56.15
 Aalborg;9.9;57.05
@@ -389,13 +354,11 @@ Hardanger;7.5;60.2;t=M
 """.strip()),
 ('SWE', 'SWE', """
 Stokholm;18.07;59.33;c=400
-Uppsala;17.6;59.86
 Gävle;17.15;60.7;t=F
 Göteborg;11.97;57.7;i=5
 Malmö;13.4;55.8
 Småland;14.8;57.0;t=F
 Linköping;15.6;58.4
-Örebro;15.2;59.3
 Värmland;13.5;59.4;t=F
 Dalarna;14.8;61.2;t=F
 """.strip()),
@@ -430,7 +393,6 @@ Petrograd;30.3;59.94;i=9,c=2200
 Novgorod;31.3;58.5;t=F
 Vyborg;28.7;60.7;t=F
 Helsinki;25.0;60.2
-Turku;22.3;60.45;t=F
 Tampere;23.8;61.5;t=F
 Savonlinna;28.9;61.8;t=F
 Karelya;33.0;61.3;t=F
@@ -446,25 +408,18 @@ Smolensk;32.05;54.78;t=F
 Tver;35.9;56.86;t=F
 Moskova;37.62;55.76;i=7,c=1700
 Tula;37.6;54.2;i=5
-Bryansk;34.4;53.25;t=F
 Orel;36.07;52.97
 Kursk;36.19;51.73
-Ryazan;39.75;54.63
 Vladimir;40.4;56.13;i=5
 Yaroslavl;39.9;57.6;t=F,i=4
-Kostroma;41.0;57.77;t=F
 Nijni Novgorod;44.0;56.3;i=5
-Penza;45.0;53.2
-Tambov;41.45;52.7
 Voronej;39.2;51.67
 Kiev;30.52;50.45;i=4,c=500
 Jitomir;28.66;50.25;t=F
-Çernigov;31.3;51.5;t=F
 Poltava;34.55;49.6
 Harkov;36.23;49.99;i=6
 Yekaterinoslav;35.04;48.46;i=7
 Donbas;38.0;48.4;i=8
-Mariupol;37.5;47.1;i=3
 Rostov;39.7;47.23;i=4
 Kuban;38.98;45.04
 Stavropol;41.97;45.04
@@ -482,7 +437,6 @@ Kutaisi;42.7;42.3;t=H
 Tiflis;44.79;41.72;t=H
 Erivan;44.5;40.2;t=M
 Kars;43.1;40.6;fort,t=M
-Ardahan;42.7;41.1;t=M
 """.strip()),
 # ------------------------------------------------------------------ DİĞERLERİ
 ('ROM', 'POOL', """
@@ -527,12 +481,10 @@ Bursa;29.06;40.19;i=2
 Zonguldak;31.8;41.45;t=F,i=3
 Balıkesir;28.0;39.6
 İzmir;27.2;38.4;c=200
-Aydın;28.0;37.6
 Eskişehir;30.5;39.77
 Antalya;30.7;37.0;t=M
 Konya;32.48;37.87
 Ankara;32.85;39.93
-Kırşehir;34.2;39.15
 Kastamonu;33.8;41.4;t=M
 Samsun;36.33;41.28
 Sivas;37.02;39.75;t=H
@@ -547,7 +499,6 @@ Erzincan;39.5;39.75;t=M
 Erzurum;41.27;39.9;fort,t=M
 Muş;42.1;38.7;t=M
 Van;43.38;38.5;t=M
-Hakkari;43.7;37.5;t=M
 Musul;43.13;36.34
 Kerkük;44.4;35.47
 Bağdat;44.4;33.3;c=200
@@ -571,7 +522,7 @@ ARMIES = [
     ('Fransız 10. Ordu', 'FRA', 'Arras', 7, 0.58),
     ('Britanya Seferi Kuvvetleri', 'GBR', 'Ypres', 6, 0.55),
     ('Hint Kolordusu', 'GBR', 'Béthune', 2, 0.52),
-    ('Belçika Ordusu', 'BEL', 'Yser', 6, 0.42),
+    ('Belçika Ordusu', 'BEL', 'Ypres', 6, 0.42),
     ('Alman 6. Ordu', 'GER', 'Lille', 7, 0.66),
     ('Alman 4. Ordu', 'GER', 'Kortrijk', 8, 0.62),
     ('Alman 1. Ordu', 'GER', 'Roye', 6, 0.60),
@@ -598,16 +549,16 @@ ARMIES = [
 # Ana demiryolu hatları (bölge adları, merkezden merkeze)
 RAILS = [
     ('Paris-Lille', ['Paris', 'Amiens', 'Arras', 'Lille']),
-    ('Paris-Verdun-Metz', ['Paris', 'Meaux', 'Châlons', 'Verdun', 'Metz', 'Strasbourg']),
+    ('Paris-Verdun-Metz', ['Paris', 'Reims', 'Châlons', 'Verdun', 'Metz', 'Strasbourg']),
     ('Paris-Nancy', ['Paris', 'Troyes', 'Chaumont', 'Nancy']),
     ('Paris-Belfort', ['Paris', 'Troyes', 'Vesoul', 'Belfort']),
-    ('Paris-Marsilya', ['Paris', 'Auxerre', 'Dijon', 'Lyon', 'Avignon', 'Marsilya']),
+    ('Paris-Marsilya', ['Paris', 'Troyes', 'Dijon', 'Lyon', 'Avignon', 'Marsilya']),
     ('Paris-Bordeaux', ['Paris', 'Orléans', 'Tours', 'Poitiers', 'Bordeaux']),
     ('Paris-Le Havre', ['Paris', 'Rouen', 'Le Havre']),
-    ('Paris-Brest', ['Paris', 'Chartres', 'Le Mans', 'Rennes', 'Brest']),
+    ('Paris-Brest', ['Paris', 'Le Mans', 'Rennes', 'Brest']),
     ('Londra-Glasgow', ['Londra', 'Birmingham', 'Manchester', 'Cumbria', 'Glasgow']),
-    ('Londra-Edinburgh', ['Londra', 'Cambridge', 'Leeds', 'Newcastle', 'Edinburgh']),
-    ('Londra-Bristol', ['Londra', 'Oxford', 'Bristol']),
+    ('Londra-Edinburgh', ['Londra', 'Nottingham', 'Leeds', 'Newcastle', 'Edinburgh']),
+    ('Londra-Bristol', ['Londra', 'Hampshire', 'Bristol']),
     ('Köln-Berlin', ['Köln', 'Ruhr', 'Hannover', 'Magdeburg', 'Berlin']),
     ('Berlin-Hamburg', ['Berlin', 'Hamburg']),
     ('Köln-Münih-Viyana', ['Köln', 'Frankfurt', 'Nürnberg', 'Münih', 'Salzburg', 'Linz', 'Viyana']),

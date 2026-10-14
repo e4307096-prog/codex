@@ -75,7 +75,6 @@ for n in ['France']:
     GROUP_OF_COUNTRY[n] = 'FRA'
 for n in ['Algeria', 'Tunisia', 'Morocco']:
     GROUP_OF_COUNTRY[n] = 'FRA_COL'
-GROUP_OF_COUNTRY['Libya'] = 'ITA_COL'
 for n in ['United Kingdom', 'Ireland']:
     GROUP_OF_COUNTRY[n] = 'GBR'
 for n in ['Cyprus', 'N. Cyprus']:
@@ -150,6 +149,8 @@ def rasterize_countries():
     names = {}
     idx = 0
     for _, row in w.iterrows():
+        if row['name'] == 'Libya':  # kapsamda yalnızca ince bir şerit; dışarıda bırakılır
+            continue
         g = row.geometry.buffer(0).intersection(clip)
         if g.is_empty:
             continue
